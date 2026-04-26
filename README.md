@@ -6,7 +6,7 @@ Wazuh open source XDR/SIEM deployed on Ubuntu, monitoring
 a Kali Linux attack machine over a custom OVS/VLAN network.
 
 ## Infrastructure
-Built on top of → [Network Lab]((https://github.com/AKRAM857/Implementing-a-Linux-Router-with-DHCP-and-DNS-Services))
+Built on top of → [Network Lab](https://github.com/AKRAM857/Implementing-a-Linux-Router-with-DHCP-and-DNS-Services)
 
 ## Stack
 | Component | Version |
