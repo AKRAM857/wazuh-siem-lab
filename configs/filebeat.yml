@@ -1,0 +1,30 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/ossec/logs/alerts/alerts.json
+  json.keys_under_root: true
+  json.overwrite_keys: true
+  json.add_error_key: true
+
+processors:
+  - drop_fields:
+      fields: ["host", "agent", "ecs", "input", "log"]
+
+output.elasticsearch:
+  hosts: ["https://127.0.0.1:9200"]
+  protocol: https
+  username: "admin"
+  password: "@@@@@##@@."
+  index: "wazuh-alerts-4.x-%{+yyyy.MM.dd}"
+  ssl.certificate_authorities:
+    - /etc/filebeat/certs/root-ca.pem
+  ssl.certificate: "/etc/filebeat/certs/admin.pem"
+  ssl.key: "/etc/filebeat/certs/admin-key.pem"
+
+setup.template.name: "wazuh"
+setup.template.pattern: "wazuh-alerts-4.x-*"
+setup.template.json.enabled: true
+setup.template.json.path: "/etc/filebeat/wazuh-template.json"
+setup.template.json.name: "wazuh"
+setup.ilm.enabled: false
