@@ -1,1 +1,7 @@
-f
+
+ollama is a tool that run ai models locally in your own hardware, since ai models are just files ollama do the work locally and uses local API to talk to them instead of using some Ai apis on the internet this is better for safety since all your files will stay local and it's free that's the best thing about it
+ollama 3.2 is the AI model made by meta and it's open source it means anyone can download it and use it
+remember:
+Ollama = the engine that runs models
+llama3.2 = the model (the brain)
+its role in my project is to analyze the last 10 alerts and describes the resulsts in clear way
