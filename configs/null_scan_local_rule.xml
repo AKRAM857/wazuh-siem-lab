@@ -1,0 +1,13 @@
+#rule to detect Null_scan using nmap 
+<group name="iptables,recon,">
+  <rule id="100002" level="8">
+    <if_sid>4100</if_sid>
+    <program_name>kernel</program_name>
+    <match>NULL_SCAN</match>
+    <description>Possible NULL port scan detected from $(srcip)</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+    <group>recon,network_scan,</group>
+  </rule>
+</group>
